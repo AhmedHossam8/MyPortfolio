@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
+import { AboutComponent } from './about/about.component';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { HeroComponent } from './hero/hero.component';
   imports: [
     HeaderComponent,
     HeroComponent,
+    AboutComponent,
   ]
 })
 export class AppComponent {
