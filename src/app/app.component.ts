@@ -3,6 +3,7 @@ import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { SkillsComponent } from './skills/skills.component';
     HeroComponent,
     AboutComponent,
     SkillsComponent,
+    ProjectsComponent,
   ]
 })
 export class AppComponent {
