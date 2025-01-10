@@ -1,0 +1,60 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #101825;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .logo {
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+
+    .navigation {
+        ul {
+            display: flex;
+            gap: 2rem;
+
+            li {
+                list-style: none;
+
+                a {
+                    color: white;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #f1a3b1;
+                        /* Soft pink hover */
+                    }
+                }
+            }
+        }
+    }
+
+    .social-links {
+        a {
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #f1a3b1;
+            }
+        }
+    }
+}
