@@ -1,56 +1,160 @@
-.header-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #101825;
+/* Body and background settings */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
     color: white;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+    /* Space for the fixed header */
+}
 
-    .logo {
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 0;
-        }
+/* Header container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(45deg, #101825, #2c3e50);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
 
-        p {
-            font-size: 1rem;
-            font-weight: 300;
-            margin: 0;
-        }
+/* Logo styling */
+.logo h1 {
+    font-size: 2rem;
+    color: #40E0D0;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 1rem;
+    color: #B0B0B0;
+}
+
+/* Navigation menu */
+.navigation .dropdown-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease;
+}
+
+/* Navigation items */
+.navigation .dropdown-menu li {
+    position: relative;
+}
+
+.navigation .dropdown-menu li a {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for menu items */
+.navigation .dropdown-menu li a:hover {
+    background-color: #40E0D0;
+    color: #101825;
+    transform: scale(1.1);
+}
+
+/* Active mobile menu */
+.navigation .dropdown-menu.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Mobile menu icon */
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 10;
+    font-size: 2rem;
+    color: #40E0D0;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu:hover {
+    transform: rotate(90deg);
+}
+
+/* Mobile menu responsive styles */
+@media (max-width: 768px) {
+    .navigation .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #101825;
+        padding: 2rem 0;
+        position: absolute;
+        top: 60px;
+        /* Adjust to make sure it appears below the header */
+        left: 0;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: all 0.5s ease;
+        z-index: 999;
+        /* Ensure it appears on top of other elements */
     }
 
-    .navigation {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+    .navigation .dropdown-menu.active {
         display: flex;
-        justify-content: center;
-        gap: 2rem;
+        opacity: 1;
+        transform: translateY(0);
+        margin-top: 2.5rem;
+    }
 
-        ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+    .mobile-menu {
+        display: block;
+    }
 
-            li {
-                list-style: none;
+    .navigation .dropdown-menu li {
+        text-align: center;
+        width: 100%;
+    }
 
-                a {
-                    color: white;
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
+    /* Active link style */
+    .active-link a {
+        background-color: #40E0D0;
+        color: #101825;
+        transform: scale(1.05);
+    }
 
-                    &:hover {
-                        color: #40E0D0;
-                    }
-                }
-            }
-        }
+    /* Link styles for dropdown menu */
+    .navigation .dropdown-menu li a {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    /* Hover and active link styles */
+    .navigation .dropdown-menu li a:hover,
+    .navigation .dropdown-menu li.active-link a {
+        background-color: #40E0D0;
+        color: #101825;
+        transform: scale(1.1);
     }
 }

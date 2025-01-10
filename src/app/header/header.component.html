@@ -4,12 +4,14 @@
         <p>Junior Software Engineer</p>
     </div>
     <nav class="navigation">
-        <ul>
+        <ul [ngClass]="{'active': isMenuActive}" class="dropdown-menu">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <div class="mobile-menu" (click)="toggleMenu()" [attr.aria-expanded]="isMenuActive ? 'true' : 'false'">
+        <i class="fas fa-bars"></i>
+    </div>
 </header>
