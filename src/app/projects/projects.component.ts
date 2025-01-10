@@ -48,7 +48,7 @@ export class ProjectsComponent {
     {
       title: 'E-Commerce',
       description: '• Frontend with React: Interactive UI for product listings, cart, and checkout.<br>• PHP & GraphQL Backend: Efficient data handling with PHP and GraphQL for products and orders.<br>• Key Features: Includes search, filters, user authentication, and order tracking.',
-      image: '/images/car-showroom.jpeg',
+      image: '/images/e-commerce.jpeg',
       demoLink: '',
       githubLink: 'https://github.com/AhmedHossam8/e-commerce',
     },
