@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
-import { AboutComponent } from './about/about.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
+import { HeroComponent } from './hero/hero.component';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +9,9 @@ import { ContactComponent } from './contact/contact.component';
   standalone: true,
   imports: [
     HeaderComponent,
-    AboutComponent,
-    ProjectsComponent,
-    ContactComponent
+    HeroComponent,
   ]
 })
 export class AppComponent {
-  title = 'personal-portfolio';
+  title = 'Ahmed Emara';
 }

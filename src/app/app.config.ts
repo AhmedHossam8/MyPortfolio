@@ -1,18 +1,7 @@
-import { ApplicationConfig, NgModule, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, RouterModule, Routes } from '@angular/router';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
-import { AboutComponent } from './about/about.component';
-import { AppComponent } from './app.component';
-
-const routes: Routes = [
-  { path: '', component: AppComponent }, 
-  { path: 'about', component: AboutComponent },
-];
-
-NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
