@@ -1,0 +1,44 @@
+.footer-container {
+    background-color: #101825;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        a {
+            display: inline-block;
+
+            .footer-icon {
+                width: 40px;
+                /* Adjust icon size */
+                height: 40px;
+                transition: transform 0.3s ease;
+            }
+
+            .footer-icon:hover {
+                transform: scale(1.1);
+                /* Adds a zoom effect on hover */
+            }
+        }
+    }
+
+    .footer-bottom {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        color: #cccccc;
+    }
+}
