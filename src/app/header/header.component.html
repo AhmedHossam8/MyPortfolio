@@ -11,7 +11,8 @@
             <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
-    <div class="mobile-menu" (click)="toggleMenu()" [attr.aria-expanded]="isMenuActive ? 'true' : 'false'">
+    <div class="mobile-menu" (click)="toggleMenu()" [class.active]="isMenuActive"
+        [attr.aria-expanded]="isMenuActive ? 'true' : 'false'">
         <i class="fas fa-bars"></i>
     </div>
 </header>

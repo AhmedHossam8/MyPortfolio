@@ -91,11 +91,14 @@ body {
     transition: all 0.3s ease;
 }
 
-.mobile-menu:hover {
-    transform: rotate(90deg);
-}
+.mobile-menu {
+    transition: transform 0.3s ease;
+  
+    &.active {
+      transform: rotate(90deg);
+    }
+  }
 
-/* Mobile menu responsive styles */
 @media (max-width: 768px) {
     .navigation .dropdown-menu {
         display: none;
@@ -105,7 +108,6 @@ body {
         padding: 2rem 0;
         position: absolute;
         top: 60px;
-        /* Adjust to make sure it appears below the header */
         left: 0;
         align-items: center;
         justify-content: center;
@@ -114,7 +116,6 @@ body {
         transform: translateY(-50px);
         transition: all 0.5s ease;
         z-index: 999;
-        /* Ensure it appears on top of other elements */
     }
 
     .navigation .dropdown-menu.active {
@@ -133,14 +134,12 @@ body {
         width: 100%;
     }
 
-    /* Active link style */
     .active-link a {
         background-color: #40E0D0;
         color: #101825;
         transform: scale(1.05);
     }
 
-    /* Link styles for dropdown menu */
     .navigation .dropdown-menu li a {
         padding: 1rem 1.5rem;
         font-size: 1.1rem;
@@ -150,7 +149,6 @@ body {
         transition: all 0.3s ease;
     }
 
-    /* Hover and active link styles */
     .navigation .dropdown-menu li a:hover,
     .navigation .dropdown-menu li.active-link a {
         background-color: #40E0D0;
