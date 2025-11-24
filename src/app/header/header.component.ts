@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +7,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
-    RouterModule
+    CommonModule
   ]
 })
 export class HeaderComponent {
@@ -17,5 +15,9 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive;
+  }
+
+  closeMenu() {
+    this.isMenuActive = false;
   }
 }

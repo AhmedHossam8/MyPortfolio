@@ -17,7 +17,7 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     SkillsComponent,
     ProjectsComponent,
-    FooterComponent,
+    FooterComponent
   ]
 })
 export class AppComponent {
