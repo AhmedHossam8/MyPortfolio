@@ -11,6 +11,18 @@ import { CommonModule } from '@angular/common';
 export class ProjectsComponent {
   projects = [
     {
+      title: 'Service-Hub',
+      description:
+        '• Built an AI-powered project analysis platform for scoring and comparing bids.<br>' +
+        '• Implemented structured tender insights to enable informed decision-making.<br>' +
+        '• Created secure authentication and role-based dashboards for different users.<br>' +
+        '• Designed advanced search and admin tools for content moderation.<br>' +
+        '• Deployed the platform with Docker and AWS EC2 for scalable access.',
+      image: '/images/servicehub.png',
+      demoLink: '',
+      githubLink: 'https://github.com/AhmedHossam8/service-hub',
+    },
+    {
       title: 'Spendlify – Smart AI Finance Assistant',
       description:
         '• A smart budgeting and expense-tracking application designed to help users manage their finances effortlessly.<br>' +
