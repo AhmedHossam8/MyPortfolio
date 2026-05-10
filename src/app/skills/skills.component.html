@@ -1,114 +1,36 @@
-<section id="skills">
-    <div class="skills-container">
-        <h2>My Skills</h2>
-        <p>
-            Below are the key technical skills I have developed through my academic journey, professional training at ITI,
-            and hands-on experience building full-stack applications.
-        </p>
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="section-title" appScrollAnimate>Skills & Expertise</h2>
+    <p class="section-subtitle" appScrollAnimate>
+      Technologies and tools I've worked with throughout my academic and professional journey.
+    </p>
 
-        <div class="skills-category">
-            <h3>Programming Languages</h3>
-            <div class="skills-list">
-                <div class="skill-card">Python</div>
-                <div class="skill-card">JavaScript</div>
-                <div class="skill-card">TypeScript</div>
-                <div class="skill-card">Java</div>
-                <div class="skill-card">C#</div>
-                <div class="skill-card">Kotlin</div>
-            </div>
+    <div class="skills-grid">
+      <div
+        class="skill-category glass"
+        *ngFor="let category of skillCategories; let i = index"
+        [style.transition-delay]="i * 0.1 + 's'"
+        appScrollAnimate
+      >
+        <div class="category-header">
+          <i class="fas {{ category.icon }}"></i>
+          <h3>{{ category.name }}</h3>
         </div>
-
-        <div class="skills-category">
-            <h3>Frameworks & Libraries</h3>
-            <div class="skills-list">
-                <div class="skill-card">React</div>
-                <div class="skill-card">Angular</div>
-                <div class="skill-card">Django</div>
-                <div class="skill-card">FastAPI</div>
-                <div class="skill-card">Flask</div>
-                <div class="skill-card">ASP.NET Core</div>
-                <div class="skill-card">Express.js</div>
-                <div class="skill-card">Flutter</div>
+        <div class="skill-items">
+          <div class="skill-item" *ngFor="let skill of category.skills">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-level">{{ skill.level }}%</span>
             </div>
-        </div>
-
-        <div class="skills-category">
-            <h3>Web Technologies</h3>
-            <div class="skills-list">
-                <div class="skill-card">HTML5</div>
-                <div class="skill-card">CSS3</div>
-                <div class="skill-card">SCSS</div>
-                <div class="skill-card">JSON</div>
-                <div class="skill-card">Responsive Design</div>
-                <div class="skill-card">Bootstrap</div>
+            <div class="progress-track">
+              <div
+                class="progress-fill"
+                [style.width.%]="skill.level"
+              ></div>
             </div>
+          </div>
         </div>
-
-        <div class="skills-category">
-            <h3>API Technologies</h3>
-            <div class="skills-list">
-                <div class="skill-card">REST APIs</div>
-                <div class="skill-card">GraphQL</div>
-            </div>
-        </div>
-
-        <div class="skills-category">
-            <h3>Databases</h3>
-            <div class="skills-list">
-                <div class="skill-card">PostgreSQL</div>
-                <div class="skill-card">MySQL</div>
-                <div class="skill-card">MongoDB</div>
-            </div>
-        </div>
-
-        <div class="skills-category">
-            <h3>AI & ML Tools</h3>
-            <div class="skills-list">
-                <div class="skill-card">Prompt Engineering</div>
-                <div class="skill-card">Generative AI</div>
-                <div class="skill-card">RAG (Retrieval Augmented Generation)</div>
-                <div class="skill-card">LangChain</div>
-                <div class="skill-card">OpenAI API</div>
-            </div>
-        </div>
-
-        <div class="skills-category">
-            <h3>DevOps & Tools</h3>
-            <div class="skills-list">
-                <div class="skill-card">Git</div>
-                <div class="skill-card">Docker</div>
-                <div class="skill-card">AWS (EC2, S3, IAM, RDS, Lambda)</div>
-                <div class="skill-card">Linux</div>
-                <div class="skill-card">CI/CD</div>
-                <div class="skill-card">Jenkins</div>
-                <div class="skill-card">Agile Methodology</div>
-            </div>
-        </div>
-
-        <div class="skills-category">
-            <h3>Architecture & Design</h3>
-            <div class="skills-list">
-                <div class="skill-card">Microservices</div>
-                <div class="skill-card">MVC</div>
-                <div class="skill-card">REST Design</div>
-                <div class="skill-card">Clean Architecture</div>
-                <div class="skill-card">JWT Authentication</div>
-                <div class="skill-card">RBAC</div>
-                <div class="skill-card">Design Patterns</div>
-            </div>
-        </div>
-
-        <div class="skills-category">
-            <h3>Soft Skills</h3>
-            <div class="skills-list">
-                <div class="skill-card">Communication</div>
-                <div class="skill-card">Problem Solving</div>
-                <div class="skill-card">Teamwork</div>
-                <div class="skill-card">Adaptability</div>
-                <div class="skill-card">Time Management</div>
-                <div class="skill-card">Leadership</div>
-            </div>
-        </div>
-
+      </div>
     </div>
+  </div>
 </section>
