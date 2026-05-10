@@ -1,69 +1,51 @@
-<section id="about">
-    <div class="about-container">
-        <h2>About Me</h2>
-        <p>
-            I am Ahmed Emara, a Junior Software Engineer with a strong passion for building impactful and scalable
-            software solutions. I specialize in full-stack web development with experience in modern technologies
-            including React, Angular, .NET, and Django. I enjoy transforming ideas into real-world applications,
-            writing clean and maintainable code, and continuously improving my technical and problem-solving skills.
-            My goal is to contribute to innovative projects while growing as a software engineer in a challenging and
-            collaborative environment.
-        </p>
+<section class="about" id="about">
+  <div class="container">
+    <h2 class="section-title" appScrollAnimate>About Me</h2>
+    <p class="section-subtitle" appScrollAnimate>
+      A passionate software engineer dedicated to building impactful and scalable solutions.
+    </p>
 
-        <section class="experience">
-            <h3>Experience</h3>
-            <p>
-                I successfully completed my Full-Stack Development training at the Information Technology Institute
-                (ITI), where I gained intensive hands-on experience building modern web applications. During the
-                program, I worked on real-world projects using technologies such as React, Node.js, Django, and
-                relational databases. I also worked with development tools including Git, Docker, and CI/CD pipelines,
-                strengthening my understanding of modern software development workflows, teamwork, and agile practices.
-            </p>
-
-            <div class="internship-image">
-                <img src="/images/iti.jpeg" alt="ITI Training Experience" class="internship-img">
-            </div>
-
-            <p>
-                Previously, I completed an internship at ITWorx, where I contributed to a mobile AI-based comic app.
-                I gained experience in Android development using Kotlin and Android Studio, as well as Flutter for
-                cross-platform development, applying my knowledge to real-world projects and integrating AI-driven
-                features.
-            </p>
-            <div class="internship-image">
-                <img src="/images/itworx.JPG" alt="Internship Image" class="internship-img">
-            </div>
-        </section>
-
-        <section class="academic-journey">
-            <h3>Academic Journey</h3>
-            <p>
-                During my time at the Arab Academy for Science, Technology & Maritime Transport, I topped my class for
-                two consecutive semesters.
-                I also participated in the ECPC competition, where I applied my problem-solving skills and collaborated
-                with like-minded peers.
-            </p>
-            <p>
-                I graduated with a GPA of 3.3, earning the "Very Good with Honors" distinction.
-            </p>
-            <img src="/images/top-student.jpg" alt="Top of the Class Achievement" class="achievement-img"
-                style="color: white;">
-            <p>
-                Alongside my studies, I worked as a Problem Solving and Data Structure Instructor, preparing students
-                for programming competitions such as ECPC. It was a fulfilling experience to help students hone their
-                skills and excel in their academic challenges.
-            </p>
-            <p>
-                For my graduation project, I developed a platform using Blockchain and NFTs in Higher Education to
-                manage educational credentials. The project received funding from ITIDA, and we proudly secured 3rd
-                place in the 6th Olympiad, held at Delta and Damietta universities. Additionally, the project was
-                awarded the Computer Science Society Prize for the Best Capstone Project of 2023/2024, highlighting
-                its innovation and impact in the field.
-            </p>
-            <div class="olympiad-images">
-                <img src="/images/Damietta1.jpg" alt="6th Olympiad Image 1" class="olympiad-img">
-                <img src="/images/Damietta2.png" alt="6th Olympiad Image 2" class="olympiad-img">
-            </div>
-        </section>
+    <div class="bio glass" appScrollAnimate>
+      <p>
+        I am Ahmed Emara, a Junior Software Engineer with a strong passion for building impactful and scalable
+        software solutions. I specialize in full-stack web development with experience in modern technologies
+        including React, Angular, .NET, and Django. I enjoy transforming ideas into real-world applications,
+        writing clean and maintainable code, and continuously improving my technical and problem-solving skills.
+        My goal is to contribute to innovative projects while growing as a software engineer in a challenging and
+        collaborative environment.
+      </p>
     </div>
+
+    <div class="timeline" appScrollAnimate>
+      <div
+        class="timeline-item"
+        *ngFor="let item of timelineItems; let i = index"
+        [class.timeline-left]="i % 2 === 0"
+        [class.timeline-right]="i % 2 !== 0"
+      >
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <span class="timeline-date">{{ item.date }}</span>
+          <h3>{{ item.title }}</h3>
+          <h4>{{ item.subtitle }}</h4>
+          <p>{{ item.description }}</p>
+          <img
+            *ngIf="item.image"
+            [src]="item.image"
+            [alt]="item.title"
+            class="timeline-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="achievements" appScrollAnimate>
+      <div class="achievement-card glass" *ngFor="let ach of achievements">
+        <i class="fas {{ ach.icon }}"></i>
+        <span class="achievement-value">{{ ach.value }}</span>
+        <span class="achievement-label">{{ ach.label }}</span>
+      </div>
+    </div>
+  </div>
 </section>
