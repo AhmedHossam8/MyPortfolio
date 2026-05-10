@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollAnimateDirective } from '../scroll-animate.directive';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollAnimateDirective],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
@@ -13,94 +14,105 @@ export class ProjectsComponent {
     {
       title: 'Service-Hub',
       description:
-        '• Built an AI-powered project analysis platform for scoring and comparing bids.<br>' +
-        '• Implemented structured tender insights to enable informed decision-making.<br>' +
-        '• Created secure authentication and role-based dashboards for different users.<br>' +
-        '• Designed advanced search and admin tools for content moderation.<br>' +
-        '• Deployed the platform with Docker and AWS EC2 for scalable access.',
+        'AI-powered project analysis platform for scoring and comparing bids. Features structured tender insights, secure authentication, role-based dashboards, and advanced search tools. Deployed with Docker and AWS EC2.',
       image: '/images/servicehub.png',
+      tech: ['Angular', 'Django', 'PostgreSQL', 'Docker', 'AWS'],
       demoLink: '',
       githubLink: 'https://github.com/AhmedHossam8/service-hub',
     },
     {
-      title: 'Spendlify – Smart AI Finance Assistant',
+      title: 'Spendlify — AI Finance Assistant',
       description:
-        '• A smart budgeting and expense-tracking application designed to help users manage their finances effortlessly.<br>' +
-        '• Features category-based spending insights, monthly summaries, real-time budget monitoring, and an integrated AI assistant for financial guidance.<br>' +
-        '• Built using Python and Flask with a clean and modern full-stack architecture.',
+        'Smart budgeting and expense-tracking app with category-based spending insights, monthly summaries, real-time budget monitoring, and an integrated AI assistant for financial guidance.',
       image: '/images/spendlify.jpeg',
+      tech: ['Python', 'Flask', 'AI', 'Finance'],
       demoLink: '',
       githubLink: 'https://github.com/albert429/Spendlify',
     },
     {
       title: 'BlogHub',
       description:
-        '• A dynamic blogging platform that allows users to create, edit, publish, and manage blog posts with ease.<br>' +
-        '• Includes categories, tags, comments, rich text editing, and an organized admin dashboard.<br>' +
-        '• Built with Django for backend logic and a clean, responsive frontend for a smooth user experience.',
+        'Dynamic blogging platform for creating, editing, publishing, and managing blog posts. Includes categories, tags, comments, rich text editing, and an organized admin dashboard.',
       image: '/images/bloghub.png',
+      tech: ['Django', 'Python', 'PostgreSQL', 'Bootstrap'],
       demoLink: '',
       githubLink: 'https://github.com/AhmedHossam8/BlogHub',
     },
     {
       title: 'Crack-N-Stack',
       description:
-        '• A classic Brick Breaker–style game where players control a paddle to break stacked bricks across multiple levels.<br>' +
-        '• Features smooth controls, increasing difficulty, power-ups, and responsive collision mechanics.<br>' +
-        '• Designed for a fun and challenging arcade experience with polished gameplay and clean visuals.',
+        'Classic Brick Breaker game with smooth controls, increasing difficulty, power-ups, and responsive collision mechanics. Designed for a fun and challenging arcade experience.',
       image: '/images/crack-n-stack.png',
+      tech: ['JavaScript', 'HTML5', 'Game Dev'],
       demoLink: 'https://ahmedhossam8.github.io/Crack-N-Stack/',
       githubLink: 'https://github.com/albert429/Crack-N-Stack',
     },
     {
       title: 'AI Comic App',
       description:
-        '• A mobile application that generates comic strips using AI-driven character creation and automated storytelling.<br>' +
-        '• Allows users to input text prompts to produce unique, stylized comic scenes instantly.<br>' +
-        '• Built with modern mobile development tools and integrated deep learning models for creative content generation.',
+        'Mobile app that generates comic strips using AI-driven character creation and automated storytelling. Users input text prompts to produce unique, stylized comic scenes instantly.',
       image: '/images/comic-book.jpg',
+      tech: ['Kotlin', 'Flutter', 'AI', 'Mobile'],
       demoLink: '',
       githubLink: '',
     },
     {
       title: 'Blockchain in Education',
       description:
-        '• A blockchain-powered platform designed to securely manage academic credentials and certificates for higher education.<br>' +
-        '• Enables decentralized verification, tamper-proof storage, and transparent credential tracking for academic institutions.<br>' +
-        '• Built using Web3 technologies and smart contracts to ensure security, trust, and scalability.',
+        'Graduation project — a platform using Blockchain and NFTs to manage educational credentials securely. Received funding from ITIDA, secured 3rd place in the 6th Olympiad, and won "Best Capstone Project of 2023/2024" by the Computer Science Society.',
       image: '/images/blockchain.jpg',
+      tech: ['Blockchain', 'Web3', 'Solidity', 'NFT', 'Ethereum'],
       demoLink: '',
       githubLink: 'https://github.com/AhmedHossam8/Graduation-Project',
     },
     {
       title: 'Weather Forecast',
       description:
-        '• A real-time weather forecasting application featuring accurate environmental data and a responsive UI.<br>' +
-        '• Built with AngularJS for the frontend and Node.js for the backend, achieving a 95% accuracy rate based on data aggregation tests.<br>' +
-        '• Includes optimized data retrieval and caching techniques for fast performance and reduced API overhead.',
+        'Real-time weather forecasting app with accurate environmental data and responsive UI. Features optimized data retrieval and caching for fast performance and reduced API overhead.',
       image: '/images/weather-forecast.jpeg',
+      tech: ['Angular', 'Node.js', 'API', 'Caching'],
       demoLink: '',
       githubLink: 'https://github.com/AhmedHossam8/weather-app',
     },
     {
       title: 'Social Media Website',
       description:
-        '• A fully functional social media platform supporting user accounts, profiles, posts, and real-time interaction features.<br>' +
-        '• Built with Python and FastAPI for backend logic, using PostgreSQL and SQLAlchemy for efficient and scalable data management.<br>' +
-        '• Follows MVC design principles and includes authentication, feed updates, and secure API endpoints.',
+        'Fully functional social media platform with user accounts, profiles, posts, and real-time interaction. Built with MVC architecture, authentication, and secure API endpoints.',
       image: '/images/social-media.jpeg',
+      tech: ['FastAPI', 'Python', 'PostgreSQL', 'MVC'],
       demoLink: '',
       githubLink: 'https://github.com/AhmedHossam8/social-media-website',
     },
     {
-      title: 'E-Commerce',
+      title: 'E-Commerce Platform',
       description:
-        '• A modern e-commerce platform offering product browsing, cart management, secure checkout, and user authentication.<br>' +
-        '• Built with a React frontend for an interactive shopping experience and a PHP + GraphQL backend for fast and flexible data handling.<br>' +
-        '• Includes search, filters, order tracking, and efficient state management for smooth and responsive performance.',
+        'Modern e-commerce platform with product browsing, cart management, secure checkout, and authentication. Includes search, filters, order tracking, and efficient state management.',
       image: '/images/e-commerce.jpeg',
+      tech: ['React', 'PHP', 'GraphQL', 'State Management'],
       demoLink: '',
       githubLink: 'https://github.com/AhmedHossam8/e-commerce',
     },
   ];
+
+  onMouseMove(event: MouseEvent, card: HTMLElement) {
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
+    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    card.style.setProperty('--glow-x', `${(x / rect.width) * 100}%`);
+    card.style.setProperty('--glow-y', `${(y / rect.height) * 100}%`);
+  }
+
+  onMouseLeave(card: HTMLElement) {
+    card.style.transform =
+      'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+  }
+
+  trackByFn(index: number) {
+    return index;
+  }
 }
