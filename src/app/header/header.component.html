@@ -1,18 +1,28 @@
-<header class="header-container">
-    <div class="logo">
-        <h1>Ahmed Emara</h1>
-        <p>Junior Software Engineer</p>
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="header-inner">
+    <div class="logo" (click)="scrollTo('home')">
+      <span class="logo-text gradient-text">Ahmed Emara</span>
+      <span class="logo-title">Junior Software Engineer</span>
     </div>
-    <nav class="navigation">
-        <ul [ngClass]="{'active': isMenuActive}" class="dropdown-menu">
-            <li><a href="/" (click)="closeMenu()">Home</a></li>
-            <li><a href="#about" (click)="closeMenu()">About</a></li>
-            <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
-            <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
-        </ul>
+    <nav class="nav">
+      <ul class="nav-list" [class.active]="isMenuActive">
+        <li *ngFor="let item of navItems">
+          <a
+            (click)="scrollTo(item.id)"
+            [class.active]="activeSection === item.id"
+          >{{ item.label }}</a>
+        </li>
+      </ul>
+      <button
+        class="mobile-toggle"
+        [class.active]="isMenuActive"
+        (click)="toggleMenu()"
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
-    <div class="mobile-menu" (click)="toggleMenu()" [class.active]="isMenuActive"
-        [attr.aria-expanded]="isMenuActive ? 'true' : 'false'">
-        <i class="fas fa-bars"></i>
-    </div>
+  </div>
 </header>
