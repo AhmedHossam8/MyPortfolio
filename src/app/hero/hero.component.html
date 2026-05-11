@@ -4,8 +4,8 @@
   <div class="orb orb-3"></div>
 
   <!-- INTRO OVERLAY -->
-  <div class="intro-overlay" *ngIf="showIntro" [class.fade-out]="phase === 'reveal'">
-    <div class="intro-robot" [class.powered]="phase === 'powerOn' || phase === 'reveal' || phase === 'idle'">
+  <div class="intro-overlay" *ngIf="showIntro" [class.fade-out]="phase === 'reveal'" [class.zoom-out]="phase === 'zoomOut'" id="introOverlay">
+    <div class="intro-robot" [class.powered]="phase === 'powerOn' || phase === 'zoomOut'" [class.zoom-out]="phase === 'zoomOut' || phase === 'reveal'" id="introRobot">
       <div class="robot-body">
         <div class="r-head">
           <div class="r-crest"></div>
@@ -48,10 +48,10 @@
     <div class="intro-text" [class.show]="phase === 'powerOn'">INITIALIZING...</div>
   </div>
 
-  <!-- HERO LAYOUT (after intro) -->
+  <!-- HERO LAYOUT -->
   <div class="hero-layout" [class.visible]="phase === 'reveal' || phase === 'idle'">
     <!-- Left Column: Content -->
-    <div class="hero-content-col">
+    <div class="hero-content-col" [class.visible]="phase === 'reveal' || phase === 'idle'">
       <div class="hero-content">
         <div class="profile-wrapper">
           <div class="profile-glow"></div>
@@ -81,8 +81,8 @@
     </div>
 
     <!-- Right Column: Robot -->
-    <div class="hero-robot-col">
-      <div class="robot-idle-wrapper" id="robotHeadIdle">
+    <div class="hero-robot-col" id="robotCol">
+      <div class="robot-idle-wrapper" id="robotHeadIdle" [class.powered]="phase === 'powerOn' || phase === 'zoomOut' || phase === 'reveal' || phase === 'idle'">
         <div class="robot-body">
           <div class="r-head">
             <div class="r-crest"></div>
@@ -118,6 +118,7 @@
             </div>
           </div>
         </div>
+        <div class="intro-glow-overlay"></div>
         <div class="robot-idle-glow"></div>
       </div>
     </div>

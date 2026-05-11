@@ -73,7 +73,11 @@
   align-items: center;
   justify-content: center;
   background: #080d1a;
-  transition: opacity 1s ease, visibility 1s ease;
+  transition: opacity 1s ease, visibility 1s ease, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &.zoom-out {
+    transform: translate(var(--zoom-tx, 0px), var(--zoom-ty, 0px));
+  }
 
   &.fade-out {
     opacity: 0;
@@ -90,26 +94,12 @@
   transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform: scale(1.8);
 
-  &.powered .r-eye {
-    animation: eyeGlowOn 0.6s ease forwards;
-  }
-
-  &.powered .r-arc {
-    animation: arcGlowOn 0.8s ease 0.3s forwards;
-  }
-
-  &.powered .r-arc-ring {
-    animation: arcRingSpin 3s linear 0.5s infinite;
-  }
-
-  &.powered .r-mouth {
-    animation: mouthGlow 1s ease 0.5s forwards;
-  }
-
-  &.powered .r-faceplate {
-    border-color: rgba(64, 224, 208, 0.4);
+  &.zoom-out {
+    transform: scale(1);
   }
 }
+
+
 
 /* ROBOT STYLES */
 .robot-body {
@@ -297,7 +287,8 @@
 
 /* The visor glow animation replaces the old eyeGlowOn */
 /* We still trigger it via .powered .r-visor */
-.intro-robot.powered .r-visor {
+.intro-robot.powered .r-visor,
+.robot-idle-wrapper.powered .r-visor {
   animation: visorGlowOn 0.6s ease forwards;
 }
 
@@ -316,7 +307,8 @@
   }
 }
 
-.intro-robot.powered .r-helmet {
+.intro-robot.powered .r-helmet,
+.robot-idle-wrapper.powered .r-helmet {
   border-color: rgba(64, 224, 208, 0.4);
 }
 
@@ -405,7 +397,8 @@
   transition: all 0.8s ease;
 }
 
-.intro-robot.powered .r-arc-core {
+.intro-robot.powered .r-arc-core,
+.robot-idle-wrapper.powered .r-arc-core {
   animation: arcGlowOn 0.8s ease 0.3s forwards;
 }
 
@@ -438,7 +431,8 @@
   }
 }
 
-.intro-robot.powered .r-arc-ring {
+.intro-robot.powered .r-arc-ring,
+.robot-idle-wrapper.powered .r-arc-ring {
   animation: arcRingSpin 3s linear 0.5s infinite;
 }
 
@@ -534,7 +528,8 @@
   transition: opacity 1s ease;
 }
 
-.intro-robot.powered .intro-glow-overlay {
+.intro-robot.powered .intro-glow-overlay,
+.robot-idle-wrapper.powered .intro-glow-overlay {
   opacity: 1;
   animation: glowPulseIntro 2s ease-in-out infinite;
 }
@@ -606,18 +601,22 @@
   gap: 4rem;
   width: 100%;
   max-width: 1100px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 
-  &.visible { opacity: 1; transform: translateY(0); }
+  &.visible { opacity: 1; }
 }
 
 .hero-content-col {
   flex: 1;
   max-width: 580px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.visible { opacity: 1; transform: translateY(0); }
 }
 
 .hero-robot-col {

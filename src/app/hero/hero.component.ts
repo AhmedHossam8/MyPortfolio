@@ -21,7 +21,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   isDeleting = false;
   private timeoutId: ReturnType<typeof setTimeout> | null = null;
 
-  phase: 'start' | 'powerOn' | 'reveal' | 'idle' = 'start';
+  phase: 'start' | 'powerOn' | 'zoomOut' | 'reveal' | 'idle' = 'start';
   showIntro = true;
 
   private mouseX = 0;
@@ -40,20 +40,38 @@ export class HeroComponent implements OnInit, OnDestroy {
     this.runIntroSequence();
   }
 
+  private calcZoomTransform() {
+    const overlay = document.getElementById('introOverlay');
+    const idleRobot = document.getElementById('robotHeadIdle');
+    if (!overlay || !idleRobot) return;
+    const idle = idleRobot.getBoundingClientRect();
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    const idleCx = idle.left + idle.width / 2;
+    const idleCy = idle.top + idle.height / 2;
+    overlay.style.setProperty('--zoom-tx', `${idleCx - cx}px`);
+    overlay.style.setProperty('--zoom-ty', `${idleCy - cy}px`);
+  }
+
   private runIntroSequence() {
     this.introTimers.push(setTimeout(() => {
       this.phase = 'powerOn';
     }, 600));
 
     this.introTimers.push(setTimeout(() => {
+      this.calcZoomTransform();
+      this.phase = 'zoomOut';
+    }, 1800));
+
+    this.introTimers.push(setTimeout(() => {
       this.phase = 'reveal';
       this.showIntro = false;
-    }, 2600));
+    }, 3000));
 
     this.introTimers.push(setTimeout(() => {
       this.phase = 'idle';
       this.startRobotTracking();
-    }, 3600));
+    }, 4000));
   }
 
   private startRobotTracking() {
