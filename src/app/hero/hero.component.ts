@@ -45,6 +45,7 @@ export class HeroComponent implements OnInit, OnDestroy {
     const idleRobot = document.getElementById('robotHeadIdle');
     if (!overlay || !idleRobot) return;
     const idle = idleRobot.getBoundingClientRect();
+    if (idle.width === 0 || idle.height === 0) return;
     const cx = window.innerWidth / 2;
     const cy = window.innerHeight / 2;
     const idleCx = idle.left + idle.width / 2;
