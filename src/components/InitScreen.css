@@ -1,0 +1,42 @@
+.init-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #080d1a;
+  opacity: 1;
+  transition: opacity 1.5s ease;
+}
+
+.init-screen.fade-out {
+  opacity: 0;
+}
+
+.init-bg-glow {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(64, 224, 208, 0.06), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.init-label {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  color: rgba(64, 224, 208, 0.7);
+  z-index: 10001;
+  pointer-events: none;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
