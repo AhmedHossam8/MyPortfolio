@@ -3,19 +3,19 @@
   background: linear-gradient(180deg, #080d1a, #0c1326);
   text-align: center;
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.2), transparent);
-  }
 }
 
-.container {
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.2), transparent);
+}
+
+.cta .container {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -34,17 +34,17 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(64, 224, 208, 0.2);
   margin-top: 1rem;
+}
 
-  svg {
-    transition: transform 0.3s ease;
-  }
+.cv-btn svg {
+  transition: transform 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 35px rgba(64, 224, 208, 0.35);
+.cv-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 35px rgba(64, 224, 208, 0.35);
+}
 
-    svg {
-      transform: translateY(3px);
-    }
-  }
+.cv-btn:hover svg {
+  transform: translateY(3px);
 }
