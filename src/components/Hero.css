@@ -242,7 +242,7 @@
   .hero-content { align-items: center; text-align: center; }
   .hero-actions { justify-content: center; }
   .hero-robot-col { display: none; }
-  .hero-bg-glow { width: 500px; height: 500px; }
+  .hero-bg-glow { display: none; }
 }
 
 @media (max-width: 768px) {
