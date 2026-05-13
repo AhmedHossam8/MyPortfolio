@@ -242,12 +242,24 @@
   .hero-content { align-items: center; text-align: center; }
   .hero-actions { justify-content: center; }
   .hero-robot-col { display: none; }
+  .hero-bg-glow { width: 500px; height: 500px; }
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 5rem 1.2rem 3rem; }
-  .hero-greeting { font-size: 2rem; }
-  .typing-wrapper { font-size: 1.1rem; }
-  .hero-tagline { font-size: 1rem; }
-  .btn { padding: 0.7rem 1.4rem; font-size: 0.9rem; }
+  .hero { padding: 4rem 1.2rem 2rem; }
+  .hero-greeting { font-size: 1.8rem; }
+  .typing-wrapper { font-size: 1rem; }
+  .hero-tagline { font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .btn { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
+  .profile-wrapper { width: 140px; height: 140px; margin-bottom: 1rem; }
+  .hero-bg-glow { width: 400px; height: 400px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 3.5rem 1rem 1.5rem; }
+  .hero-greeting { font-size: 1.5rem; }
+  .typing-wrapper { font-size: 0.9rem; }
+  .hero-tagline { font-size: 0.85rem; }
+  .btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+  .profile-wrapper { width: 100px; height: 100px; margin-bottom: 0.75rem; }
 }
