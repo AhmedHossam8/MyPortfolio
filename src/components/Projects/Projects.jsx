@@ -1,4 +1,6 @@
-import { useScrollReveal } from '../hooks/useScrollReveal'
+'use client'
+
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import './Projects.css'
 
 const projects = [
