@@ -5,6 +5,15 @@ import './Projects.css'
 
 const projects = [
   {
+    title: 'Personal Branding Website',
+    description:
+      'A personal branding website for a graphic designer featuring a custom 2D illustrated character in the hero section. Includes light/dark theme toggling, automatic Behance API project fetching, masonry gallery layout, animated transitions, and a contact form with email integration.',
+    image: '/images/rana_portfolio.png',
+    tech: ['React', 'Framer Motion', 'Behance API', 'EmailJS', 'Responsive'],
+    demoLink: 'https://rana-sherif-portfolio.netlify.app/',
+    githubLink: '',
+  },
+  {
     title: 'Service-Hub',
     description:
       'AI-powered project analysis platform for scoring and comparing bids. Features structured tender insights, secure authentication, role-based dashboards, and advanced search tools. Deployed with Docker and AWS EC2.',
@@ -14,7 +23,7 @@ const projects = [
     githubLink: 'https://github.com/AhmedHossam8/service-hub',
   },
   {
-    title: 'Spendlify — AI Finance Assistant',
+    title: 'Spendlify "AI Finance Assistant"',
     description:
       'Smart budgeting and expense-tracking app with category-based spending insights, monthly summaries, real-time budget monitoring, and an integrated AI assistant for financial guidance.',
     image: '/images/spendlify.jpeg',
@@ -66,15 +75,6 @@ const projects = [
     tech: ['Angular', 'Node.js', 'API', 'Caching'],
     demoLink: '',
     githubLink: 'https://github.com/AhmedHossam8/weather-app',
-  },
-  {
-    title: 'Social Media Website',
-    description:
-      'Fully functional social media platform with user accounts, profiles, posts, and real-time interaction. Built with MVC architecture, authentication, and secure API endpoints.',
-    image: '/images/social-media.jpeg',
-    tech: ['FastAPI', 'Python', 'PostgreSQL', 'MVC'],
-    demoLink: '',
-    githubLink: 'https://github.com/AhmedHossam8/social-media-website',
   },
   {
     title: 'E-Commerce Platform',
@@ -131,29 +131,22 @@ function ProjectCard({ project }) {
     card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
   }
 
+  const handleCardClick = () => {
+    const url = project.demoLink || project.githubLink
+    if (url) window.open(url, '_blank', 'noopener')
+  }
+
   return (
     <div
       className="project-card glass"
       ref={cardRef}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
+      onClick={handleCardClick}
+      style={{ cursor: (project.demoLink || project.githubLink) ? 'pointer' : 'default' }}
     >
       <div className="project-image-wrapper">
         <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
-        <div className="project-overlay">
-          <div className="overlay-links">
-            {project.githubLink && (
-              <a href={project.githubLink} target="_blank" rel="noopener" className="overlay-btn">
-                <i className="fab fa-github"></i> Code
-              </a>
-            )}
-            {project.demoLink && (
-              <a href={project.demoLink} target="_blank" rel="noopener" className="overlay-btn">
-                <i className="fas fa-external-link-alt"></i> Live
-              </a>
-            )}
-          </div>
-        </div>
       </div>
       <div className="project-content">
         <h3>{project.title}</h3>
@@ -162,18 +155,6 @@ function ProjectCard({ project }) {
           {project.tech.map((t, i) => (
             <span className="tech-tag" key={i}>{t}</span>
           ))}
-        </div>
-        <div className="project-links">
-          {project.githubLink && (
-            <a href={project.githubLink} target="_blank" rel="noopener">
-              <i className="fab fa-github"></i> GitHub
-            </a>
-          )}
-          {project.demoLink && (
-            <a href={project.demoLink} target="_blank" rel="noopener">
-              <i className="fas fa-external-link-alt"></i> Live Demo
-            </a>
-          )}
         </div>
       </div>
     </div>
