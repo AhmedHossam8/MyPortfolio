@@ -19,6 +19,9 @@ export const metadata = {
   description:
     'Full Stack Developer skilled in React, Next.js, Django, and .NET, building scalable web applications, APIs, and responsive user experiences.Django, and .NET',
   icons: { icon: '/favicon.jpg' },
+  verification: {
+    google: "google-site-verification: googleec9732fc592ef360.html",
+  },
 }
 
 export default function RootLayout({ children }) {
