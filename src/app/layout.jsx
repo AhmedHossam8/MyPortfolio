@@ -17,7 +17,7 @@ const firaCode = Fira_Code({
 export const metadata = {
   title: 'Ahmed Emara | Junior Software Engineer',
   description:
-    'Personal portfolio of Ahmed Emara, a Junior Software Engineer specializing in full-stack web development.',
+    'Full Stack Developer specializing in React, Next, Full Stack Developer skilled in React, Next.js, Django, and .NET, building scalable web applications, APIs, and responsive user experiences.Django, and .NET',
   icons: { icon: '/favicon.jpg' },
 }
 
